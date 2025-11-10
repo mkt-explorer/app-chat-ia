@@ -23,7 +23,7 @@ export default function Chatbot({ userEmail }: ChatbotProps) {
                 <h3 className='font-medium'>Assistente IA Corsan</h3>
             </div>
             <FullPageChat
-                chatflowid="ba6cc141-3415-4ea1-9fc3-b893553880fd"
+                chatflowid="143c916d-f0c3-4e2d-a129-7fccdfaf6e1d"
                 apiHost="https://flow.explorercallcenter.com"
                 chatflowConfig={{
                     overrideConfig: {
