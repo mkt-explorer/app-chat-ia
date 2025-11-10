@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react'
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -10,7 +11,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import Image from 'next/image'
 
-export default function LoginPage() {
+function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
@@ -58,7 +59,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex-flex-col md:grid md:grid-cols-12 bg-gray-100 items-stretch">
-
       <div className='md:col-span-6 flex items-center justify-center'>
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1 mb-6">
@@ -125,5 +125,17 @@ export default function LoginPage() {
         <div className="absolute inset-0 bg-[url(/2151210298.jpg)] bg-cover bg-center" />
       </div>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600" />
+      </div>
+    }>
+      <LoginForm />
+    </Suspense>
   )
 }
