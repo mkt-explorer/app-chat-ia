@@ -25,14 +25,14 @@ export async  function NavUser(){
     <SidebarMenu>
         <SidebarMenuItem className="flex flex-col items-center bg-foreground/5 p-2 space-y-2 rounded-lg">
             <Button asChild className="w-full" variant={"ghost"}> 
-                <Link href="/support" className="flex items-center justify-start space-x-2">
+                <Link href="http://chat.wescctech.com.br:3000/home" className="flex items-center justify-start space-x-2">
                     <LifeBuoy />
                     <span>Suporte</span>
                 </Link>
             </Button>
             <Separator className="w-full" />
             <Button asChild className="w-full" variant={"ghost"}> 
-                <Link href="/support" className="flex items-center justify-start space-x-2">
+                <Link href="http://chat.wescctech.com.br:3000/home" className="flex items-center justify-start space-x-2">
                     <Star />
                     <span>Falar com Super</span>
                 </Link>
