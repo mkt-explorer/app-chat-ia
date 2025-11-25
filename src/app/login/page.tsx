@@ -48,7 +48,7 @@ function LoginForm() {
         }
       }
 
-      router.push('/dashboard')
+      router.push('/chat')
       router.refresh()
     } catch (error: any) {
       setError(error.message || 'Erro ao fazer login. Verifique suas credenciais.')
@@ -63,7 +63,7 @@ function LoginForm() {
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1 mb-6">
             <Image src={'/logo_corsan.svg'} alt='logo login' width={70} height={70}/>
-            <CardTitle className="text-xl font-bold mt-10">Login</CardTitle>
+            <CardTitle className="text-xl font-bold mt-10">Conecte-se</CardTitle>
             <CardDescription>Entre com suas credenciais para acessar a plataforma.</CardDescription>
           </CardHeader>
           
@@ -116,7 +116,7 @@ function LoginForm() {
           </CardContent>
 
           <CardFooter className='mt-20 flex justify-center'>
-            <CardDescription className='text-[10px]'>©Todos os Direitos Reservados <a href='https://explorercallcenter.com.br?utm_source=google&utm_medium=plataforma+chat+corsan' target='_blank' className='font-bold'>Explorer Call Center.</a></CardDescription>
+            <CardDescription className='text-[10px]'>© Desenvolvido por <a href='https://explorercallcenter.com.br?utm_source=google&utm_medium=plataforma+chat+corsan' target='_blank' className='font-bold'>Explorer Call Center.</a></CardDescription>
           </CardFooter>
         </Card>
       </div>

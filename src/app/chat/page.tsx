@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 
 export default async function Page() {
-  // NOVO: Buscar usuário autenticado
+  
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
@@ -24,7 +24,7 @@ export default async function Page() {
         } as React.CSSProperties
       }>
       <AppSidebar />
-      <SidebarInset> 
+      <SidebarInset className="overflow-hidden">
         <Chatbot userEmail={user.email!} />
       </SidebarInset>
     </SidebarProvider>

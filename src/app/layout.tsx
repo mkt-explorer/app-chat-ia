@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Plataforma de Login',
-  description: 'Sistema de autenticação com Supabase',
+  title: 'Portal de Conhecimento - Assistente Virtual Corsan',
+  description: 'Assistente Virtual Corsan para suporte e informações.',
 }
 
 export default function RootLayout({
@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   )
 }
