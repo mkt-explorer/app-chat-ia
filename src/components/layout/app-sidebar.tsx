@@ -6,7 +6,7 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarMenuButton,} from "@/com
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { NavMain } from "@/components/ui/nav-main"
 import { SidebarHeaderLogoTrigger } from "./SidebarHeaderLogoTrigger"
-import { BookOpen, ChevronsUpDown, LogOut, SquareTerminal, } from "lucide-react"
+import { BookOpen, ChevronsUpDown, LogOut, NotepadText, } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import type { User } from "@supabase/supabase-js"
 import { useRouter } from 'next/navigation'
@@ -15,7 +15,7 @@ const navItems = [
   {
     title: "Inicie Aqui",
     url: "#",
-    icon: SquareTerminal,
+    icon: NotepadText,
     isActive: true,
     items: [
       {
@@ -115,7 +115,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground cursor-pointer"
             >
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage src={(user as any)?.user_metadata?.avatar_url || ""} alt={displayName} />
@@ -149,7 +149,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
             <DropdownMenuSeparator />
 
-            <DropdownMenuItem onSelect={() => handleSignOut()}>
+            <DropdownMenuItem onSelect={() => handleSignOut()} className="cursor-pointer">
               <LogOut /> Sair
             </DropdownMenuItem>
           </DropdownMenuContent>
